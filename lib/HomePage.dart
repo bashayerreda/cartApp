@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
+HomePage({Key key}) : super(key: key);
+
+@override
+_HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -11,155 +13,361 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'SaraPolySkill...',
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("saraa poly silk"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.favorite),
+                  Icon(Icons.add_shopping_cart)
+                ],)
+            ],
+          )
+      )
+      ,
+      body: SafeArea(
+        child: Container(
+          child: Container(
+            alignment: Alignment.center,
+            child: buildBody(),
+          ),
         ),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.favorite),color: Colors.white,onPressed: ()=>{},),
-          IconButton(icon: Icon(Icons.shopping_cart),color: Colors.white,onPressed: ()=>{},),
-        ],
-        leading: Icon(Icons.arrow_back),
       ),
-      body: buildBody(),
     );
   }
-}
 
-Widget buildBody() {
-  return Column(
-    children: <Widget>[
-      Card(
+  Widget buildBody() {
+    var _textStyle = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w700,
+    );
+
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.grey[200],
+
         child: Column(
-          children: <Widget>[
-            Text(
-                'Sara Poly Silk Embellished,Woven Salwar Suit Material(Unstiched)',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontSize: 20
+          crossAxisAlignment: CrossAxisAlignment.start,
+
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              color: Colors.white,
+              // alignment: Alignment.
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  SizedBox(height: 20,),
+                  Text("""saraa poly silk embellised , woven salwar suit material (unstiched)"""
+                    , style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Container(
+
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25)
+                      ,border: Border.all(
+                        color: Colors.white,
+                        width: 1
+                    ),
+                      color: Colors.grey[200],
+                    ),
+
+                    child: Text("Special price"
+
+                      , style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.red,
+                      ),
+                      textAlign: TextAlign.left,),
+                  ),
+                  SizedBox(height: 10,),
+                  Row(children: [
+                    Text(" ¥548  "),
+                    Text(" ¥3333  ",
+                      style: TextStyle(decoration: TextDecoration.lineThrough),),
+                    Text(" ¥70% off  ",
+                      style: TextStyle(color: Colors.red),)
+                  ],),
+                  SizedBox(height: 20,),
+                  Container(
+                    width: 120,
+                    child: Row(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25)
+                          ,border: Border.all(
+                            color: Colors.white,
+                            width: 1
+                        ),
+                          color: Colors.red[200],
+                        ),
+
+                            child: Text("4.3", style: TextStyle(color: Colors.white),)),
+                        Text("2814 rating "),
+                      ],),
+                  ),
+                  SizedBox(height: 20,),
+
+                ],
               ),
             ),
             SizedBox(height: 10,),
             Container(
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'Special Price',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 15,
-                  backgroundColor: Colors.black12
-                ),
-                textAlign: TextAlign.left,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              color: Colors.white,
+              // alignment: Alignment.
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Size"
+                    , style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Text("tip : for the best result buy one size larger"
+                    , style: TextStyle(
+                      fontSize: 14,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                    children: [
+                      Container(
+                          width: 40,
+                          height: 20,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                              color: Colors.white,
+                              width: 1
+                          ),
+                            color: Colors.grey[200],
+                          ),
+
+                          child: Text("XS")),
+                      Container(
+                          width: 40,
+                          height: 20,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                              color: Colors.white,
+                              width: 1
+                          ),
+                            color: Colors.grey[200],
+                          ),
+
+                          child: Text("S")),
+                      Container(
+                          width: 40,
+                          height: 20,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                              color: Colors.white,
+                              width: 1
+                          ),
+                            color: Colors.grey[200],
+                          ),
+
+                          child: Text("M")),
+                      Container(
+                          width: 40,
+                          height: 20,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                              color: Colors.white,
+                              width: 1
+                          ),
+                            color: Colors.grey[200],
+                          ),
+
+                          child: Text("L")),
+
+                    ],),
+                  SizedBox(height: 20,),
+
+                ],
               ),
             ),
             SizedBox(height: 10,),
-            Row(
-              children: <Widget>[
-                Text(
-                  '549',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17
-                  ),
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  '1893',
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 13,
-                    decoration: TextDecoration.lineThrough
-                  ),
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  '70%off',
-                  style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 15,
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: 10,),
-            Row(
-              children: <Widget>[
-                Text(
-                  '4.3*',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    backgroundColor: Colors.red,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              color: Colors.white,
+              // alignment: Alignment.
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
 
-                  ),
-                ),
-                SizedBox(width: 10,),
-                Text(
-                  '2814 rating',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 15
-                  ),
-                )
-              ],
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Color"
+                    , style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                    children: [
+                      Container(
+                        child: SizedBox(height: 50, width: 50,),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                            color: Colors.white,
+                            width: 1
+                        ),
+                            color: Colors.black
+                        ),
+                      ),
+                      Container(
+                        child: SizedBox(height: 50, width: 50,),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                            color: Colors.white,
+                            width: 1
+                        ),
+                            color: Colors.red
+                        ),
+                      ),
+                      Container(
+                        child: SizedBox(height: 50, width: 50,),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25)
+                            ,border: Border.all(
+                            color: Colors.white,
+                            width: 1
+                        ),
+                            color: Colors.blue
+                        ),
+                      ),
+                    ],),
+                  SizedBox(height: 20,),
+
+                ],
+              ),
             ),
             SizedBox(height: 10,),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              color: Colors.white,
+              // alignment: Alignment.
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Product Details"
+                    , style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+
+                        child: Column(
+
+                          crossAxisAlignment: CrossAxisAlignment.start,
+
+                          children: [
+                            Text("Color" , textAlign: TextAlign.left,),
+                            Text("Length" , textAlign: TextAlign.left),
+                            Text("Type"),
+                            Text("Sleeve"),
+                          ],
+                        ),
+                        width: 150,
+                        alignment: Alignment.centerLeft,
+                      )
+                      ,
+                      Container(
+
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+
+                          children: [
+                            Text("Yellow"),
+                            Text("Knee Length"),
+                            Text("Bandage"),
+                            Text("Cap Sleeve"),
+                          ],
+                        ),
+                        width: 150,
+                        alignment: Alignment.centerLeft,
+                      ),
+
+                    ],
+                  ),
+                  SizedBox(height: 20,),
+
+                ],
+              ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              color: Colors.white,
+              // alignment: Alignment.
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Product Descripction"
+                    , style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+
+                    ),
+                    textAlign: TextAlign.left,),
+                  SizedBox(height: 10,),
+                  Text("saraa poly silk embellised , woven salwar suit material (unstiched)saraa poly silk embellised , woven salwar suit material (unstiched)saraa poly silk embellised , woven salwar suit material (unstiched)"
+                    , style: TextStyle(
+                      fontSize: 14,
+
+                    ),
+                    textAlign: TextAlign.left,),
+
+                  SizedBox(height: 20,),
+
+                ],
+              ),
+            ),
           ],
         ),
       ),
-      SizedBox(height: 1,),
-      Container(
-        alignment: Alignment.topLeft,
-        child: Card(
-          child: Column(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Size',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Trip:For the best fit,buy one size larger than your usual size.'
-                ),
-              ),
-              SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'XS',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      //background:BoxShape.circle(25)
-                    ),
-                  ),
-                  SizedBox(width: 80,),
-                  Text(
-                    'S'
-                  ),
-                  SizedBox(width: 80,),
-                  Text(
-                      'M'
-                  ),
-                  SizedBox(width: 80,),
-                  Text(
-                      'L'
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
-      )
-    ],
-  );
+    );
+  }
 }
