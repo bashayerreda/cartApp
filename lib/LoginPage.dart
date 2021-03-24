@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gokartapp/SignUp.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -42,7 +44,9 @@ class _LoginPage extends State<LoginPage> {
                     fontSize: 35
                 ),
               ),
-              onPressed: (){},
+              onPressed: (){
+
+              },
             ),
             SizedBox(width: 90,),
             FlatButton(
@@ -104,7 +108,9 @@ class _LoginPage extends State<LoginPage> {
             child: MaterialButton(
               // minWidth: MediaQuery.of(context).size.width,
               padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => SignUp()));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

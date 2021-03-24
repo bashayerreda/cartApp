@@ -1,3 +1,8 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:gokartapp/LoginPage.dart';
+import 'package:gokartapp/SignUp.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -8,6 +13,16 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Timer(
+      Duration(seconds: 3),() => Navigator.push(context, MaterialPageRoute(builder: (_) => LoginPage()),),);
+
+
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
             children: [
               Positioned.fill(
                 child: Container(
-                  color: Colors.blueAccent,
+                  color: Colors.red,
                 ),
               ),
               Container(
@@ -35,10 +50,10 @@ class _SplashPageState extends State<SplashPage> {
                         ),
                           SizedBox(height: 20,),
                           Text(
-                            "GoCart App",
+                            "Go kart App",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

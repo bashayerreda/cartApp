@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gokartapp/HomePage.dart';
-import 'package:gokartapp/SignInPage.dart';
-
+import 'package:gokartapp/SignUp.dart';
+import 'package:flutter/material.dart';
 
 import 'LoginPage.dart';
 import 'SplashPage.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
        // visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home:SplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }
